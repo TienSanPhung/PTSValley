@@ -23,7 +23,13 @@ app.Map("/Test", app =>
 {
     app.Run(async context =>
     {
-        await context.Response.WriteAsync("Đã deploy thành công!");
+        await context.Response.WriteAsync("Da Deploy thanh cong!");
+    });
+});
+app.UseEndpoints(endpoints => {
+    endpoints.Map("/GitTest", async context =>
+    {
+        await context.Response.WriteAsync("Test Git Thanh Cong!");
     });
 });
 app.MapControllerRoute(
