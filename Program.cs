@@ -19,19 +19,6 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-app.Map("/Test", app =>
-{
-    app.Run(async context =>
-    {
-        await context.Response.WriteAsync("Da Deploy thanh cong!");
-    });
-});
-app.UseEndpoints(endpoints => {
-    endpoints.Map("/GitTest", async context =>
-    {
-        await context.Response.WriteAsync("Test Git Thanh Cong!");
-    });
-});
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
