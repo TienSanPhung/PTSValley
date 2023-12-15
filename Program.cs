@@ -19,7 +19,13 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-
+app.Map("/Test", app =>
+{
+    app.Run(async context =>
+    {
+        await context.Response.WriteAsync("Đã deploy thành công!");
+    });
+});
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
